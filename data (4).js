@@ -1,0 +1,163 @@
+/**
+ * Street Outreach Compass — offline fallback dataset
+ *
+ * The app's primary data source is now live: it queries OpenStreetMap
+ * (via the Overpass API) for whatever city or country the user is in,
+ * so it works worldwide instead of being tied to one city.
+ *
+ * This file is only used as a backup — shown if the live lookup fails
+ * (no internet, Overpass is down, etc.) so the app never shows a
+ * completely empty screen. It's a small set of real Houston-area
+ * organizations, compiled from public directories (Coalition for the
+ * Homeless of Houston/Harris County, HomelessShelterDirectory.org,
+ * LOTS Houston, Covenant House, findhelp.org) as of mid-2026.
+ *
+ * Hours, intake windows, and phone numbers change — the app always
+ * tells the user to call ahead regardless of which data source is used.
+ */
+
+const FALLBACK_RESOURCES = [
+  {
+    name: "Star of Hope — Men's Development Center",
+    type: "Emergency shelter",
+    audience: "Men",
+    address: "1811 Ruiz St, Houston, TX 77026",
+    phone: "713-227-8900",
+    hours: "Intake Mon–Sat 8–11am & 1–3pm, Sun 9am–12pm & 1–3pm",
+    notes: "ID required, ages 19+. Maximum stay 12 nights.",
+    lat: 29.7716,
+    lng: -95.3512,
+  },
+  {
+    name: "Star of Hope — Cornerstone Community (Reed Road)",
+    type: "Emergency shelter",
+    audience: "Women & children",
+    address: "2575 Reed Rd, Houston, TX 77051",
+    phone: "713-222-2220",
+    hours: "Intake Mon–Fri 8–3:30pm",
+    notes: "Christ-centered residential program for women and families.",
+    lat: 29.6614,
+    lng: -95.3591,
+  },
+  {
+    name: "Salvation Army — Center of Hope",
+    type: "Emergency shelter",
+    audience: "Men, women & families",
+    address: "1717 Congress St, Houston, TX 77002",
+    phone: "713-223-8889",
+    hours: "Intake Mon–Fri 8am–5pm",
+    notes: "30-day program available.",
+    lat: 29.7614,
+    lng: -95.3619,
+  },
+  {
+    name: "Covenant House Texas",
+    type: "Emergency shelter",
+    audience: "Youth ages 18–24",
+    address: "1111 Lovett Blvd, Houston, TX 77006",
+    phone: "713-523-2231",
+    hours: "Open 24/7",
+    notes: "Also serves LGBTQ+ youth and pregnant/parenting teens. Walk-ins welcome any time.",
+    lat: 29.7466,
+    lng: -95.3921,
+  },
+  {
+    name: "Magnificat House",
+    type: "Emergency shelter",
+    audience: "Men & women",
+    address: "3219 Austin St, Houston, TX 77004",
+    phone: "713-529-9764",
+    hours: "Call ahead for intake",
+    notes: "Residents contribute in some way to stay; multiple locations.",
+    lat: 29.7367,
+    lng: -95.3707,
+  },
+  {
+    name: "The Women's Home",
+    type: "Emergency shelter",
+    audience: "Women",
+    address: "607 Westheimer Rd, Houston, TX 77006",
+    phone: "713-521-3150",
+    hours: "Intake 8am–4pm",
+    notes: "Focus on women recovering from addiction and mental illness.",
+    lat: 29.7415,
+    lng: -95.3898,
+  },
+  {
+    name: "Houston Area Women's Center",
+    type: "Emergency shelter",
+    audience: "Survivors of domestic/sexual violence",
+    address: "1010 Waugh Dr, Houston, TX 77019",
+    phone: "713-528-6798",
+    hours: "24/7 crisis line",
+    notes: "Confidential shelter location; call the crisis line first.",
+    lat: 29.7614,
+    lng: -95.3963,
+  },
+  {
+    name: "The Beacon",
+    type: "Day shelter",
+    audience: "Adults",
+    address: "1212 Prairie St, Houston, TX 77002",
+    phone: "713-220-9737",
+    hours: "Thu–Mon 7am–3pm",
+    notes: "Showers, meals, and case management during the day; not an overnight shelter.",
+    lat: 29.7614,
+    lng: -95.3628,
+  },
+  {
+    name: "Lord of the Streets",
+    type: "Day shelter",
+    audience: "Adults",
+    address: "3401 Fannin St, Houston, TX 77004",
+    phone: "713-526-0311",
+    hours: "Mon–Fri 8am–12pm (Fri until 12pm)",
+    notes: "Day shelter, showers, mail service, and referrals.",
+    lat: 29.7315,
+    lng: -95.3809,
+  },
+  {
+    name: "SEARCH Homeless Services",
+    type: "Day shelter",
+    audience: "Adults",
+    address: "2015 Congress St, Houston, TX 77002",
+    phone: "713-739-7752",
+    hours: "Mon–Fri 8am–3pm",
+    notes: "Day services plus longer-term case management and housing programs.",
+    lat: 29.7602,
+    lng: -95.3654,
+  },
+  {
+    name: "Coalition for the Homeless of Houston/Harris County",
+    type: "NGO / coordinated entry",
+    audience: "Anyone experiencing homelessness",
+    address: "2000 Crawford St Suite 700, Houston, TX 77002",
+    phone: "713-739-7514",
+    hours: "Business hours, Mon–Fri",
+    notes: "Runs 'The Way Home' — the region's official intake and housing-referral system. Best first call if you're not sure where someone should go.",
+    lat: 29.7526,
+    lng: -95.3627,
+  },
+  {
+    name: "Healthcare for the Homeless — Houston",
+    type: "NGO / healthcare",
+    audience: "People experiencing homelessness",
+    address: "2505 Fannin St, Houston, TX 77002",
+    phone: "713-739-7752",
+    hours: "Call for hours",
+    notes: "Free medical, dental, and mental health care; also runs the Project Access transport bus.",
+    lat: 29.7423,
+    lng: -95.3785,
+  },
+  {
+    name: "United Way of Greater Houston — 2-1-1",
+    type: "Hotline / referral",
+    audience: "Anyone in need",
+    address: "Phone service — no physical intake location",
+    phone: "2-1-1",
+    hours: "24/7",
+    notes: "The right first call when you're unsure what kind of help someone needs — housing, food, medical, crisis, or otherwise.",
+    lat: null,
+    lng: null,
+  },
+];
