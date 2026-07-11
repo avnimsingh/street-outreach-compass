@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Street Outreach Compass — Houston</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="emergency-strip">
+    <span id="emergencyLabel"><strong>Unresponsive, injured, or in medical distress?</strong> Don't wait — call your local emergency number.</span>
+    <a class="call911" id="emergencyCallLink" href="tel:112">Call 112</a>
+  </div>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <span class="eyebrow">Street Outreach Compass · Worldwide</span>
+      <h1>Find the right place to send help — not a guess about who deserves it.</h1>
+      <p class="lede">
+        This tool won't try to guess whether someone sleeping outside is homeless from a photo —
+        that kind of guess is unreliable and can do real harm. Instead, answer a couple of quick
+        questions about what you're seeing, and get real, nearby shelters, NGOs, and hotlines —
+        anywhere in the world — sorted by distance.
+      </p>
+    </div>
+  </header>
+
+  <main>
+    <section class="panel">
+      <span class="panel-label">All questions</span>
+      <h2>What are you seeing right now?</h2>
+      <p class="status-line" style="margin-top:-0.6rem; margin-bottom:1.2rem;">
+        Every question starts on "Yes" — click any button to change it if that's not what you're seeing.
+      </p>
+      <div id="questionList"></div>
+      <div class="urgent-banner" id="urgentBanner">
+        <strong>Call now.</strong> Medical distress or unresponsiveness needs emergency
+        services before anything else — the resources below are for once the person is safe and stable.
+      </div>
+    </section>
+
+    <section class="panel" id="locatePanel">
+      <span class="panel-label" id="outcomeLabel">Based on your answers</span>
+      <h2 id="outcomeHeading">Find nearby help</h2>
+      <p id="outcomeExplainer" class="status-line" style="margin-bottom:1rem;"></p>
+      <button class="locate-btn" id="locateBtn">Find help near me</button>
+      <div class="status-line" id="statusLine"></div>
+    </section>
+
+    <section class="panel" id="resultsSection" hidden>
+      <span class="panel-label">Results</span>
+      <h2 id="resultsHeading">Nearby resources</h2>
+      <a id="mapsSearchFallback" class="maps-fallback" href="#" target="_blank" rel="noopener" style="display:none;">Open a live Maps search near me →</a>
+      <div id="results"></div>
+    </section>
+  </main>
+
+  <footer>
+    Resource data © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap contributors</a>, available under the Open Database License (ODbL).<br/>
+    Listings are community-maintained — hours, phone numbers, and current operation may not always be accurate. Always call ahead.<br/>
+    Not affiliated with any organization listed.
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
